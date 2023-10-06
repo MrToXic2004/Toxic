@@ -1,24 +1,79 @@
 import java.util.Scanner;
 
-public class FourthClass {   //super class
-    
-    public int attributeX = 10;
-    private int attributeY = 20;
-        int attributeZ = 30;
-    protected int attributeK = 40;
-
-    public void methodOne(){
-        System.out.println("Hi! methodOne");
+public class ThirdClass {
+    public int x ;
+    public int y ;
+    public char mode ;
+    private int score ;
+    public static void main(String[] arge){ 
+        ThirdClass obj = new ThirdClass();
+        obj.input_x();
+        obj.input_y();
+        obj.input_mode();
+        obj.select_mode(obj.mode,obj.x,obj.y);
+        obj.addmethod();
+        obj.submethod();
+        obj.mulmethod();
+        obj.dvimethod();
+        
     }
-    public void methodTwo(){
-        System.out.println("Hi! methodTwo");
+    public void input_x(){
+        Scanner scaner = new Scanner(System.in);
+        System.out.print("input_x: ");
+        x=scaner.nextInt();
     }
-}
-
-public class FifthClass extends FourthClass {   //sub class
-    public static void main(String[] arge){
-        System.out.println("main.FifthClass");
-        FifthClass obj = new FifthClass();
-        obj.methodOne();
+    public void input_y(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("input_y: ");
+        y=scanner.nextInt();
     }
+    public void input_mode(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("mode: ");
+        mode=scanner.next().charAt(0);
+    }
+    public void select_mode(char m,int inp_x,int inp_y){
+        //System.out.println(m);
+        switch(mode){
+            case 'A':
+            //score = x+y;
+            System.out.println("ADD "+ inp_x +" "+ inp_y);
+            break;
+            case 'S':
+            //score = x-y;
+            System.out.println("SUB "+ inp_x +" "+ inp_y);
+            break;
+            case 'M':
+            //score = x*y;
+            System.out.println("MUL "+ inp_x +" "+ inp_y);
+            break;
+            case 'D':
+            //score = x/y;
+            System.out.println("DIV "+ inp_x +" "+ inp_y);
+            break;
+            default:
+            System.out.println("Error mode");
+        }
+    }
+    private double addmethod(int inp_x,int inp_y){
+        double result ;
+        result = inp_x + inp_y;
+        return result ;
+    }
+    private double submethod(int inp_x,int inp_y){
+        double result ;
+        result = inp_x - inp_y;
+        return result ;
+    }
+    public double mulmethod(int inp_x,int inp_y){
+        double result ;
+        result = inp_x / inp_y;
+        return result ;
+    }
+    public double dvimethod(int inp_x,int inp_y){
+        double result ;
+        result = inp_x * inp_y;
+        return result ;
+    }
+        
 }
