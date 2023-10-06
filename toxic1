@@ -4,17 +4,17 @@ public class ThirdClass {
     public int x ;
     public int y ;
     public char mode ;
-    private int score ;
+    private double score ;
     public static void main(String[] arge){ 
         ThirdClass obj = new ThirdClass();
         obj.input_x();
         obj.input_y();
         obj.input_mode();
         obj.select_mode(obj.mode,obj.x,obj.y);
-        obj.addmethod();
-        obj.submethod();
-        obj.mulmethod();
-        obj.dvimethod();
+        obj.addmethod(obj.x,obj.y);
+        obj.submethod(obj.x,obj.y);
+        obj.mulmethod(obj.x,obj.y);
+        obj.dvimethod(obj.x,obj.y);
         
     }
     public void input_x(){
@@ -34,22 +34,23 @@ public class ThirdClass {
     }
     public void select_mode(char m,int inp_x,int inp_y){
         //System.out.println(m);
+        double rs ;
         switch(mode){
             case 'A':
-            //score = x+y;
-            System.out.println("ADD "+ inp_x +" "+ inp_y);
+            rs = addmethod(inp_x, inp_y);
+            System.out.println(rs);
             break;
             case 'S':
-            //score = x-y;
-            System.out.println("SUB "+ inp_x +" "+ inp_y);
+            rs = submethod(inp_x, inp_y);
+            System.out.println(rs);
             break;
             case 'M':
-            //score = x*y;
-            System.out.println("MUL "+ inp_x +" "+ inp_y);
+            rs = mulmethod(inp_x, inp_y);
+            System.out.println(rs);
             break;
             case 'D':
-            //score = x/y;
-            System.out.println("DIV "+ inp_x +" "+ inp_y);
+            rs = dvimethod(inp_x, inp_y);
+            System.out.println(rs);
             break;
             default:
             System.out.println("Error mode");
@@ -67,13 +68,13 @@ public class ThirdClass {
     }
     public double mulmethod(int inp_x,int inp_y){
         double result ;
-        result = inp_x / inp_y;
+        result = inp_x * inp_y;
         return result ;
     }
     public double dvimethod(int inp_x,int inp_y){
         double result ;
-        result = inp_x * inp_y;
+        result = inp_x / inp_y;
         return result ;
     }
-        
+    
 }
