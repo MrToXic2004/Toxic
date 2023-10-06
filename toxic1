@@ -1,52 +1,24 @@
 import java.util.Scanner;
 
-public class Test {
-    public int x ;
-    public int y ;
-    public char mode ;
-    private int score ;
-    //....
+public class FourthClass {   //super class
+    
+    public int attributeX = 10;
+    private int attributeY = 20;
+        int attributeZ = 30;
+    protected int attributeK = 40;
+
+    public void methodOne(){
+        System.out.println("Hi! methodOne");
+    }
+    public void methodTwo(){
+        System.out.println("Hi! methodTwo");
+    }
+}
+
+public class FifthClass extends FourthClass {   //sub class
     public static void main(String[] arge){
-        int sc ;
-        Test obj = new Test();
-        obj.input_x();
-        obj.input_y();
-        obj.input_mode();
-        obj.mode_A(obj.x,obj.y);
-        obj.mode_B(obj.x,obj.y);
-        obj.mode_C(obj.x,obj.y);
-        obj.mode_D(obj.x,obj.y);
-        sc = obj.score(obj.mode_A);
+        System.out.println("main.FifthClass");
+        FifthClass obj = new FifthClass();
+        obj.methodOne();
     }
-    public void input_x(){
-        Scanner scaner = new Scanner(System.in);
-        System.out.print("input_x: ");
-        x=scaner.nextInt();
-    }
-    public void input_y(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("input_y: ");
-        y=scanner.nextInt();
-    }
-    public void input_mode(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Select mode (A B C D): ");
-        System.out.print("mode: ");
-        mode=scanner.next().charAt(0);
-    }
-    public void mode_A(int c,int d){
-        score = c+d ;
-    }
-    public void mode_B(int c,int d){
-        score = c-d ;
-    }
-    public void mode_C(int c,int d){
-        score = c*d ;
-    }
-    public void mode_D(int c,int d){
-        score = c/d ;
-    }
-    private void score(int sco){
-        System.out.println(score);
-    }
-}   
+}
